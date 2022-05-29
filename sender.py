@@ -69,7 +69,8 @@ try:
 
         server.sendmail(sender_email, emails[i], text)
         # sleep for one minutes to avoid spam
-        sleep(60)
+        if i <len(emails)-1:
+            sleep(60)
 except Exception as e:
     print(e)
 finally:
